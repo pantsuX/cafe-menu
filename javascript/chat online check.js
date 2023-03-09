@@ -10,7 +10,7 @@ function getUsersOnline(userList) {
     if (numUsers === 1) return `${userList[0]} online`;
     
     const [firstUser, secondUser, ...extraUsers] = userList;
-    if (numUsers === 2) return `${firstUser} and ${secondUser} online`;
+    if (numUsers === 2) return `${firstUser} and ${secondUser} online`; // standard return input , formula found on stackoverflow
     
     return `${firstUser}, ${secondUser}, and ${numUsers - 2} more online`;
   }
