@@ -20,7 +20,7 @@ function generateFizzBuzzList(endNumber) {
   const fizzBuzz4 = generateFizzBuzzList(6);
   const fizzBuzz5 = generateFizzBuzzList(15);
   
-  console.log(fizzBuzz1.join(", ")); // join them in a row
+  console.log(fizzBuzz1.join(", ")); // join them in a rows
   console.log(fizzBuzz2.join(", "));
   console.log(fizzBuzz3.join(", "));
   console.log(fizzBuzz4.join(", "));
