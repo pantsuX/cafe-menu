@@ -19,4 +19,4 @@ console.log(isMarathon25Miles(distanceList)); // true
 
 //The loop will start with the first item in the list (i.e., i = 0), and continue as long as i is less than the length of the list (i.e., i < distanceList.length).
 
-//After each iteration of the loop, the value of i will be incremented by 1 (i.e., i++), until the loop has iterated over all the items in the list.
+//After each iteration of the loop, the value of i will be incremented by 1 (i.e., i++), until the loop has iterated over all the items in the list
