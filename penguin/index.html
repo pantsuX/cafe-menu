@@ -121,6 +121,7 @@ body {
   top: 10%;
   left: 25%;
   z-index: 1;
+  animation: 3s ease-in-out infinite wave;
 }
 
 .face {
@@ -264,13 +265,14 @@ body {
   left: 5%;
   transform-origin: top left; 
   transform: rotate(130deg) scaleX(-1);
-  animation: 3s linear infinite wave;
+  animation: 1s linear infinite wave;
 }
 
 .arm.right {
   top: 0%;
   right: -5%;
   transform: rotate(-45deg);
+  animation: 2s alternate-reverse infinite wave;
 }
 
 @keyframes wave {
