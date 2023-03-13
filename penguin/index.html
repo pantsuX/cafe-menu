@@ -121,9 +121,18 @@ body {
   top: 10%;
   left: 25%;
   z-index: 1;
-  animation: 3s ease-in-out infinite wave;
+  animation: rotation 2s infinite linear;
 }
 
+@keyframes rotation {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      
 .face {
   width: 60%;
   height: 70%;
