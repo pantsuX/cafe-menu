@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculator</title>
+    <script>
+        // Define a function to perform basic arithmetic operations
+        function calculator(operator, num1, num2) {
+            let result;
+
+            // Perform the selected operation
+            switch (operator) {
+                case "+":
+                    result = num1 + num2;
+                    break;
+                case "-":
+                    result = num1 - num2;
+                    break;
+                case "*":
+                    result = num1 * num2;
+                    break;
+                case "/":
+                    result = num1 / num2;
+                    break;
+                default:
+                    result = "Invalid operator";
+            }
+
+            return result;
+        }
+
+        // Define a function to handle button clicks
+        function handleClick(value) {
+            const display = document.getElementById("display");
+            if (value === "clear") {
+                display.value = "";
+            } else if (value === "=") {
+                const expression = display.value;
+                const operator = expression.match(/[+\-*/]/)[0];
+                const operands = expression.split(/[+\-*/]/);
+                const num1 = parseFloat(operands[0]);
+                const num2 = parseFloat(operands[1]);
+                const result = calculator(operator, num1, num2);
+                display.value = result;
+            } else {
+                display.value += value;
+            }
+        }
+    </script>
+    <style>
+        button {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+}
+button.clear {
+  width: 100px;
+}
+button.bs {
+  width: 100px;
+}
+
+td[colspan="2"] button {
+  width: 105px;
+}
+table {
+  display: grid;
+}
+
+input {
+    height: 60px;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <h1>Calculator</h1>
+    <form>
+        <input class ="input" type="text" id="display" name="display" readonly />
+        <br /><br />
+        <table>
+            <tr>
+                <td><button type="button" onclick="handleClick('7')">7</button></td>
+                <td><button type="button" onclick="handleClick('8')">8</button></td>
+                <td><button type="button" onclick="handleClick('9')">9</button></td>
+                <td><button type="button" onclick="handleClick('/')">/</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="handleClick('4')">4</button></td>
+                <td><button type="button" onclick="handleClick('5')">5</button></td>
+                <td><button type="button" onclick="handleClick('6')">6</button></td>
+                <td><button type="button" onclick="handleClick('*')">*</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="handleClick('1')">1</button></td>
+                <td><button type="button" onclick="handleClick('2')">2</button></td>
+                <td><button type="button" onclick="handleClick('3')">3</button></td>
+                <td><button type="button" onclick="handleClick('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="handleClick('.')">.</button></td>
+                <td><button type="button" onclick="handleClick('0')">0</button></td>
+                <td><button type="button" onclick="handleClick('=')">=</button></td>
+                
+                <td colspan="3"><button type="button" onclick="handleClick('+')">+</button></td>
+             
+            </tr>
+            <tr>
+                <td colspan="2" ><button type="button" onclick="handleClick('clear')">C</button></td>
+                <td colspan="2" ><button type="button" onclick="handleClick('backspace')">⌫</button></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
